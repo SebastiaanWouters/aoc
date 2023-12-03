@@ -50,10 +50,13 @@ function parseLine(l)
 end
 
 sum = 0
+power = 0
 for k,v in pairs(lines) do
   res = parseLine(v)
   if res.g <= green and res.b <= blue and res.r <= red then
     sum = sum + res.id
   end
+  temp = res.g * res.b * res.r
+  power = power + temp
 end
-print(sum)
+print(sum, power)
